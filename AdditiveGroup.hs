@@ -1,4 +1,6 @@
-module AdditiveGroup where
+module AdditiveGroup (AdditiveGroup, add, identity, invert, subtract) where
+
+import Prelude hiding (subtract)
 
 -- An additive group with inversion
 class AdditiveGroup a where
