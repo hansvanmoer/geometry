@@ -18,7 +18,7 @@ extra-source-files:  CHANGELOG.md
 
 executable geometry
   main-is:             Main.hs
-  other-modules:       AdditiveGroup Array MultiplicativeGroup
+  other-modules:       AdditiveGroup Array MultiplicativeGroup Vector
   -- other-extensions:
   build-depends:       base >=4.13 && <4.14
   -- hs-source-dirs:

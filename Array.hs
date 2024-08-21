@@ -1,5 +1,5 @@
 {-# LANGUAGE FlexibleInstances #-}
-module Array where
+module Array (Array, getSize, getValueAt, setValueAt, uniform) where
 
 -- An array of values
 class (Applicative a, Foldable a) => Array a where
