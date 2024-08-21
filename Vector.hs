@@ -1,4 +1,4 @@
-module Vector where
+module Vector (addVectors, divideVectorByScalar, getDimension, getCoordinate, innerProduct, multiplyScalarAndVector, multiplyVectorAndScalar, norm, nullVector, setCoordinate, unitVector) where
 
 import qualified AdditiveGroup as AG
 import qualified Array as A
@@ -39,9 +39,9 @@ multiplyScalarAndVector l r  = multiplyVectorAndScalar r l
 divideVectorByScalar :: (A.Array a, MG.MultiplicativeGroup b) => a b -> b -> a b
 divideVectorByScalar l r = multiplyVectorAndScalar l (MG.invert r)
 
--- The zero vector
-zeroVector :: (A.Array a, AG.AdditiveGroup b) => a b
-zeroVector = A.uniform AG.identity
+-- The null vector
+nullVector :: (A.Array a, AG.AdditiveGroup b) => a b
+nullVector = A.uniform AG.identity
 
 -- The unit vector
 unitVector :: (A.Array a, MG.MultiplicativeGroup b) => a b
