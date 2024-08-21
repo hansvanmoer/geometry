@@ -4,7 +4,7 @@ module Array where
 -- An array of values
 class (Applicative a, Foldable a) => Array a where
   -- Returns the length of the array
-  getLength :: a b -> Int
+  getSize :: a b -> Int
   
   -- Gets a value at a specific position in the array
   getValueAt :: Int -> a b -> b
@@ -19,7 +19,7 @@ class (Applicative a, Foldable a) => Array a where
 data Array1 b = A1 b
 
 instance Array Array1 where
-  getLength _ = 1
+  getSize _ = 1
   getValueAt _ (A1 x) = x
   setValueAt 0 x _ = A1 x
   uniform v = A1 v
@@ -38,7 +38,7 @@ instance Foldable Array1 where
 data Array2 b = A2 b b
 
 instance Array Array2 where
-  getLength _ = 1
+  getSize _ = 1
   getValueAt 0 (A2 x _) = x
   getValueAt _ (A2 _ y) = y
   setValueAt 0 x (A2 _ y) = A2 x y
@@ -60,7 +60,7 @@ instance Foldable Array2 where
 data Array3 b = A3 b b b
 
 instance Array Array3 where
-  getLength _ = 1
+  getSize _ = 1
   getValueAt 0 (A3 x _ _) = x
   getValueAt 1 (A3 _ y _) = y
   getValueAt 2 (A3 _ _ z) = z
@@ -85,7 +85,7 @@ instance Foldable Array3 where
 data Array4 b = A4 b b b b
 
 instance Array Array4 where
-  getLength _ = 1
+  getSize _ = 1
   getValueAt 0 (A4 x _ _ _) = x
   getValueAt 1 (A4 _ y _ _) = y
   getValueAt 2 (A4 _ _ z _) = z
